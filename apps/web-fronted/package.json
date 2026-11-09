@@ -1,0 +1,16 @@
+{
+  "name": "boutique-migajas-web",
+  "version": "1.0.0",
+  "description": "Frontend e-commerce Boutique Migajas — HTML5 / CSS3 / JS ES Modules",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev":    "npx serve . --listen 3000 --no-clipboard",
+    "build":  "echo 'Static site — no build step required'",
+    "lint":   "echo 'Add eslint config for linting'"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18"
+  }
+}

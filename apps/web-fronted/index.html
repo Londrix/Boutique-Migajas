@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Boutique Migajas — Moda elegante en Lerdo, Gomez Palacio, Torreon" />
+  <meta name="theme-color" content="#C29B38" />
+
+  <title>Boutique Migajas · Estilo &amp; Bienestar</title>
+
+  <!-- Favicon (reemplazar con el real) -->
+  <!-- <link rel="icon" type="image/svg+xml" href="src/assets/images/favicon.svg" /> -->
+
+  <!-- Google Fonts: Playfair Display + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Estilos globales -->
+  <link rel="stylesheet" href="src/assets/css/styles.css" />
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════
+       HEADER
+  ════════════════════════════════════════════════════════════ -->
+  <header id="site-header" class="bm-header">
+
+    <!-- Top bar: búsqueda · logo · carrito -->
+    <div class="bm-header__topbar">
+      <button class="bm-header__icon-btn" id="btn-search" aria-label="Buscar" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
+          <circle cx="11" cy="11" r="7"/>
+          <line x1="16.5" y1="16.5" x2="22" y2="22"/>
+        </svg>
+      </button>
+
+      <a href="index.html" class="bm-header__logo" aria-label="Boutique Migajas – Inicio">
+        <h1>Boutique Migajas</h1>
+      </a>
+
+      <button class="bm-header__icon-btn" id="btn-cart" aria-label="Carrito de compras">
+        <span class="bm-header__cart-badge" id="cart-count" style="display:none">0</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
+          <path d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Search bar -->
+    <div class="bm-header__search-bar" id="search-bar" aria-hidden="true">
+      <form class="bm-header__search-form" id="search-form" role="search">
+        <label for="search-input" class="sr-only">Buscar</label>
+        <input
+          type="search"
+          id="search-input"
+          name="q"
+          placeholder="Buscar prendas, colecciones…"
+          class="bm-header__search-input"
+          autocomplete="off"
+        />
+        <button type="submit" class="bm-header__search-btn" aria-label="Buscar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <circle cx="11" cy="11" r="7"/>
+            <line x1="16.5" y1="16.5" x2="22" y2="22"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="bm-nav" aria-label="Menú principal">
+      <button class="bm-nav__hamburger" id="btn-hamburger" aria-label="Abrir menú" aria-expanded="false">
+        <span class="bm-nav__hamburger-line"></span>
+        <span class="bm-nav__hamburger-line"></span>
+        <span class="bm-nav__hamburger-line"></span>
+      </button>
+      <ul class="bm-nav__list" id="nav-list" role="list">
+        <li class="bm-nav__item"><a href="index.html"               class="bm-nav__link bm-nav__link--active" aria-current="page">Inicio</a></li>
+        <li class="bm-nav__item"><a href="blusas.html"              class="bm-nav__link">Blusas</a></li>
+        <li class="bm-nav__item"><a href="vestidos.html"            class="bm-nav__link">Vestidos</a></li>
+        <li class="bm-nav__item"><a href="conjuntos.html"           class="bm-nav__link">Conjuntos</a></li>
+        <li class="bm-nav__item"><a href="pantalones_faldas.html"   class="bm-nav__link">Pantalones / Faldas</a></li>
+        <li class="bm-nav__item bm-nav__item--highlight"><a href="novedades.html" class="bm-nav__link">Novedades</a></li>
+        <li class="bm-nav__item"><a href="nosotros.html"            class="bm-nav__link">Nosotros</a></li>
+      </ul>
+    </nav>
+
+  </header><!-- /#site-header -->
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       MAIN
+  ════════════════════════════════════════════════════════════ -->
+  <main>
+
+    <!-- ── HERO BANNER ──────────────────────────────────────── -->
+    <section class="bm-hero" aria-label="Banner principal">
+      <!--
+        REEMPLAZA src con tu imagen real de hero.
+        Recomendación: foto editorial de moda femenina, alta resolución.
+        Unsplash → https://unsplash.com/s/photos/fashion-boutique
+      -->
+      <img
+        class="bm-hero__bg"
+        src="public/banner.png"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="bm-hero__overlay" aria-hidden="true"></div>
+      <div class="bm-hero__content">
+        <p class="bm-hero__eyebrow">Nueva Colección - Invierno 2026</p>
+        <h1 class="bm-hero__title">De prenda en prenda,<br>armas el outfit</h1>
+        <p class="bm-hero__subtitle">Descubre nuestra colección de blusas, vestidos y conjuntos diseñados para la mujer moderna.</p>
+        <a href="novedades.html" class="bm-hero__cta">Ver Novedades</a>
+      </div>
+    </section><!-- /.bm-hero -->
+
+
+    <!-- ── PRODUCT GRID ─────────────────────────────────────── -->
+    <section aria-labelledby="products-title">
+
+      <div class="bm-section-header">
+        <p class="bm-section-header__eyebrow">Lo más buscado</p>
+        <h2 class="bm-section-header__title" id="products-title">Colección Actual</h2>
+        <hr class="bm-section-header__divider" aria-hidden="true" />
+      </div>
+
+      <div class="bm-products">
+
+        <!-- Filtros y ordenamiento -->
+        <div class="bm-products__filters">
+          <div class="bm-products__filter-tags" role="group" aria-label="Filtrar por categoría">
+            <button class="bm-products__filter-tag bm-products__filter-tag--active" data-filter="todos">Todos</button>
+            <button class="bm-products__filter-tag" data-filter="blusas">Blusas</button>
+            <button class="bm-products__filter-tag" data-filter="vestidos">Vestidos</button>
+            <button class="bm-products__filter-tag" data-filter="conjuntos">Conjuntos</button>
+            <button class="bm-products__filter-tag" data-filter="pantalones">Pantalones</button>
+            <button class="bm-products__filter-tag" data-filter="faldas">Faldas</button>
+          </div>
+          <div class="bm-products__sort">
+            <label for="sort-select">Ordenar:</label>
+            <select id="sort-select" aria-label="Ordenar productos">
+              <option value="newest">Más recientes</option>
+              <option value="price_asc">Precio: menor a mayor</option>
+              <option value="price_desc">Precio: mayor a menor</option>
+            </select>
+          </div>
+        </div>
+
+      
+
+      </div><!-- /.bm-products -->
+
+    </section>
+
+
+    <!-- ── BANNER SECUNDARIO / CTA ───────────────────────────── -->
+    <section class="bm-cta-banner" aria-label="Visítanos">
+      <div class="bm-cta-banner__inner">
+        <div class="bm-cta-banner__text">
+          <p class="bm-section-header__eyebrow" style="text-align:left;">3 Sucursales en Colima</p>
+          <h2 style="font-family:var(--font-serif);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:var(--bm-brown);">
+            Encuéntranos cerca de ti
+          </h2>
+          <p style="font-size:0.9rem;color:var(--bm-brown-light);margin-top:.5rem;max-width:420px;">
+            Lerdo · Gomez Palacio · Torreón.<br>
+            Atención personalizada y los mejores precios.
+          </p>
+        </div>
+        <a href="nosotros.html" class="bm-hero__cta" style="align-self:center;">Ver sucursales</a>
+      </div>
+    </section>
+
+  </main><!-- /main -->
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════════════════ -->
+  <footer class="bm-footer" aria-label="Pie de página">
+
+    <!-- Newsletter -->
+    <div class="bm-footer__newsletter">
+      <div class="bm-footer__newsletter-inner">
+        <div class="bm-footer__newsletter-copy">
+          <p class="bm-footer__newsletter-label">Únete a nuestra comunidad</p>
+          <h2 class="bm-footer__newsletter-title">Recibe lo último en moda &amp; exclusivos</h2>
+        </div>
+        <form class="bm-footer__newsletter-form" id="newsletter-form" novalidate>
+          <label for="newsletter-email" class="sr-only">Correo electrónico</label>
+          <input
+            type="email"
+            id="newsletter-email"
+            name="email"
+            placeholder="tucorreo@ejemplo.com"
+            class="bm-footer__newsletter-input"
+            required
+          />
+          <button type="submit" class="bm-footer__newsletter-btn">Suscribirme</button>
+        </form>
+        <p class="bm-footer__newsletter-msg" id="newsletter-msg" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <!-- Main grid -->
+    <div class="bm-footer__main">
+      <div class="bm-footer__grid">
+
+        <!-- Col 1 · Menú -->
+        <div class="bm-footer__col">
+          <h3 class="bm-footer__col-title">Menú</h3>
+          <ul class="bm-footer__list" role="list">
+            <li><a href="#"                    class="bm-footer__link">Buscar</a></li>
+            <li><a href="index.html"           class="bm-footer__link">Inicio</a></li>
+            <li><a href="novedades.html"       class="bm-footer__link">Novedades</a></li>
+            <li><a href="blusas.html"          class="bm-footer__link">Blusas</a></li>
+            <li><a href="vestidos.html"        class="bm-footer__link">Vestidos</a></li>
+            <li><a href="conjuntos.html"       class="bm-footer__link">Conjuntos</a></li>
+            <li><a href="pantalones_faldas.html" class="bm-footer__link">Pantalones / Faldas</a></li>
+            <li><a href="faq.html"             class="bm-footer__link">Preguntas Frecuentes</a></li>
+            <li><a href="nosotros.html"        class="bm-footer__link">Nosotros</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 2 · Sucursales -->
+        <div class="bm-footer__col">
+          <h3 class="bm-footer__col-title">Sucursales</h3>
+          <ul class="bm-footer__list" role="list">
+            <li class="bm-footer__branch">
+              <svg class="bm-footer__branch-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>Lerdo
+            </li>
+            <li class="bm-footer__branch">
+              <svg class="bm-footer__branch-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>Gomez Palacio
+            </li>
+            <li class="bm-footer__branch">
+              <svg class="bm-footer__branch-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>Torreon
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 3 · Contacto -->
+        <div class="bm-footer__col">
+          <h3 class="bm-footer__col-title">Contacto</h3>
+          <ul class="bm-footer__list bm-footer__list--contact" role="list">
+            <li class="bm-footer__contact-item">
+              <svg class="bm-footer__contact-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <!-- REEMPLAZAR -->
+              <a href="mailto:contacto@boutiquemigajas.com" class="bm-footer__link">contacto@boutiquemigajas.com</a>
+            </li>
+            <li class="bm-footer__contact-item">
+              <svg class="bm-footer__contact-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.03 1.19 2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
+              </svg>
+              <!-- REEMPLAZAR -->
+              <a href="tel:+523121234567" class="bm-footer__link">+52 (312) 123-4567</a>
+            </li>
+            <li class="bm-footer__contact-item">
+              <svg class="bm-footer__contact-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                   viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              <!-- REEMPLAZAR -->
+              <a href="https://wa.me/523121234567" target="_blank" rel="noopener noreferrer" class="bm-footer__link">
+                WhatsApp: +52 (312) 123-4567
+              </a>
+            </li>
+          </ul>
+
+          <div class="bm-footer__social" aria-label="Redes sociales">
+            <!-- REEMPLAZAR href con URLs reales -->
+            <a href="https://facebook.com/boutiquemigajas" target="_blank" rel="noopener noreferrer"
+               class="bm-footer__social-link" aria-label="Facebook de Boutique Migajas">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+              </svg>
+            </a>
+            <a href="https://instagram.com/boutiquemigajas" target="_blank" rel="noopener noreferrer"
+               class="bm-footer__social-link" aria-label="Instagram de Boutique Migajas">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="1.6">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div><!-- /.bm-footer__grid -->
+    </div><!-- /.bm-footer__main -->
+
+    <!-- Copyright -->
+    <div class="bm-footer__bottom">
+      <p class="bm-footer__copy">&copy; <span id="footer-year"></span> Boutique Migajas · Todos los derechos reservados.</p>
+      <p class="bm-footer__copy">Hecho con mucho amorcito migajero en Lerdo, Durango</p>
+    </div>
+
+  </footer><!-- /.bm-footer -->
+
+
+
+  <script src="src/components/footer.js" defer></script>
+  <script type="module" src="src/pages/home.js"></script>
+
+  <!-- CTA Banner inline styles -->
+  <style>
+    .bm-cta-banner {
+      background: var(--bm-cream-hover);
+      border-top: 1px solid var(--bm-border);
+      border-bottom: 1px solid var(--bm-border);
+      padding: 3.5rem 2rem;
+      margin-top: 1rem;
+    }
+    .bm-cta-banner__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+  </style>
+
+</body>
+</html>
