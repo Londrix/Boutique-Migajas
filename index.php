@@ -164,12 +164,12 @@ require_once __DIR__ . '/includes/header.php';
   <?php else: ?>
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6">
       <?php foreach ($productos as $prod): 
-          $prodJson = htmlspecialchars(json_encode($prod), ENT_QUOTES, 'UTF-8');
+          $prodJson = json_encode($prod, JSON_UNESCAPED_UNICODE);
           $disponible = $prod['total_existencias'] > 0;
       ?>
         <article
-          onclick="window.BoutiqueModal.open(<?= $prodJson ?>)"
-          class="group bg-white rounded-lg border border-brown/10 overflow-hidden shadow-sm hover:shadow-luxury-hover transition-all duration-300 flex flex-col cursor-pointer"
+          data-product='<?= htmlspecialchars($prodJson, ENT_QUOTES, 'UTF-8') ?>'
+          class="bm-product-card group bg-white rounded-lg border border-brown/10 overflow-hidden shadow-sm hover:shadow-luxury-hover transition-all duration-300 flex flex-col cursor-pointer"
         >
           <!-- Contenedor Imagen Ratio 3:4 -->
           <div class="relative aspect-[3/4] bg-cream-hover overflow-hidden">

@@ -8,6 +8,7 @@
 (function () {
   'use strict';
 
+
   const STORAGE_KEY = 'boutique_migajas_cart';
   const FALLBACK_IMG = 'assets/images/productos/blusa.jpg';
 
@@ -410,6 +411,18 @@
   // --- Inicialización al cargar el DOM ---
   document.addEventListener('DOMContentLoaded', () => {
     updateCartBadges();
+
+    // --- Click en tarjetas de producto para abrir modal ---
+    document.addEventListener('click', (e) => {
+      const card = e.target.closest('.bm-product-card');
+      if (!card) return;
+      try {
+        const productData = JSON.parse(card.dataset.product);
+        window.BoutiqueModal.open(productData);
+      } catch (err) {
+        console.error('Error al abrir modal de producto:', err);
+      }
+    });
 
     // Cerrar modales con tecla Escape
     document.addEventListener('keydown', (e) => {

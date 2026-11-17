@@ -154,6 +154,24 @@ function obtenerInventarioGlobal(?PDO $pdo, string $categoria = '', string $busq
 }
 
 /**
+ * Normaliza el nombre de una sucursal a su nombre real (Lerdo, Gómez Palacio, Torreón).
+ */
+function normalizarNombreSucursal(string $sucursal): string
+{
+    $s = strtolower(trim($sucursal));
+    if (str_contains($s, 'lerdo') || $s === 'sucursal a') {
+        return 'Sucursal Lerdo';
+    }
+    if (str_contains($s, 'g') && (str_contains($s, 'mez') || str_contains($s, 'palacio')) || $s === 'sucursal b') {
+        return 'Sucursal Gómez Palacio';
+    }
+    if (str_contains($s, 'torre') || $s === 'sucursal c') {
+        return 'Sucursal Torreón';
+    }
+    return $sucursal; // si no coincide, devolver el original
+}
+
+/**
  * Agrupa filas planas de la vista federada en productos consolidados por SKU.
  */
 function consolidarProductos(array $rows, string $categoria = ''): array
@@ -165,7 +183,7 @@ function consolidarProductos(array $rows, string $categoria = ''): array
         $nombre    = $row['nombre'];
         $precio    = (float) ($row['precio'] ?? 0);
         $stock     = (int) ($row['existencias'] ?? 0);
-        $sucursal  = $row['sucursal'] ?? 'Central';
+        $sucursal  = normalizarNombreSucursal($row['sucursal'] ?? 'Central');
         $talla     = !empty($row['talla']) ? $row['talla'] : 'ÚNICA';
         $color     = !empty($row['color']) ? $row['color'] : 'Estándar';
         $imagenUrl = !empty($row['imagen_url']) ? $row['imagen_url'] : 'assets/images/productos/blusa.jpg';

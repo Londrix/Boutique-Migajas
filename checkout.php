@@ -132,16 +132,8 @@ require_once __DIR__ . '/includes/header.php';
             class="w-full bg-cream/30 border border-brown/20 rounded-md px-3.5 py-2.5 text-xs text-brown focus:outline-none focus:border-gold focus:bg-white"
           >
             <?php 
-                $sucMap = [
-                    'Sucursal A (Lerdo)' => 'Sucursal Lerdo',
-                    'Sucursal B (Gómez Palacio)' => 'Sucursal Gómez Palacio',
-                    'Sucursal C (Torreón)' => 'Sucursal Torreón',
-                    'Sucursal A' => 'Sucursal Lerdo',
-                    'Sucursal B' => 'Sucursal Gómez Palacio',
-                    'Sucursal C' => 'Sucursal Torreón',
-                ];
                 foreach ($listaSucursales as $sucOpt):
-                    $display = $sucMap[$sucOpt] ?? $sucOpt;
+                    $display = normalizarNombreSucursal($sucOpt);
             ?>
                 <option value="<?= htmlspecialchars($display) ?>">
                     <?= htmlspecialchars($display) ?>
