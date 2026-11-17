@@ -1,0 +1,15 @@
+# Archivo de variables de entorno (no subir credenciales reales)
+.env
+.env.local
+.env.*.local
+
+# Dependencias Node.js si se usan herramientas externas
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos de sistema y logs
+*.log
+.DS_Store
+Thumbs.db
